@@ -1,4 +1,4 @@
-# dont use
+# dont use still alpha
 FROM alpine:3.11.3 as builder
 
 RUN apk update
