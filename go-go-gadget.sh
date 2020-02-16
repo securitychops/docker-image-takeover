@@ -19,3 +19,6 @@ done
 takeover -T 3 -t 20 -l /tmp/full-domains.txt -o takeover.json
 
 python3 process.py
+
+echo '{"task_type":"slack","body":"takeover complete : '$SCAN_ME'"}' > /tmp/$UUID
+aws sqs send-message --queue-url $SQS_URL --message-body $(cat /tmp/$UUID)
