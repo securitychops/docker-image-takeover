@@ -16,6 +16,6 @@ do
   echo "https://$word" >> /tmp/full-domains.txt
 done
 
-takeover -T 10 -t 20 -l /tmp/full-domains.txt -o takeover.json
+takeover -T 10 -t 10 -l /tmp/full-domains.txt -o takeover.json
 
 python3 process.py
