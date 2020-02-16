@@ -8,7 +8,7 @@ echo "aws_secret_access_key = $S3_BUCKET_SECRET" >> ~/.aws/credentials
 echo "[default]" >> ~/.aws/config
 echo "region = $AWS_REGION" >> ~/.aws/config
 
-aws s3 mv s3://$S3_BUCKET_NAME/tmp/$UUID /tmp/domains.txt 
+aws s3 cp s3://$S3_BUCKET_NAME/tmp/$UUID /tmp/domains.txt 
 
 for word in $(cat /tmp/domains.txt);
 do
